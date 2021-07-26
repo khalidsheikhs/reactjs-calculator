@@ -1,0 +1,29 @@
+.container {
+    width: 580px;
+    margin: 30px auto;
+    border: 1px solid #ccc;
+}
+.keypad {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.key {
+    padding: 3px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+.key span {
+    display: block;
+    cursor: pointer;
+}
+
+.screen {
+    background-color: #bbb;
+    width: -webkit-fill-available;
+    border: none;
+    padding: 10px;
+    margin: 0;
+    border-radius: 0;
+}
