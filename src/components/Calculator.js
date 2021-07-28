@@ -8,15 +8,16 @@ function Calculator() {
         if (obj.isControlTab) clearValue()
         else showValue(obj);
     }
+
     const showValue = (obj) => {
-        // let val = obj.value === '×' ? '*' : obj.value === '÷' ? '/' : obj.value;
+        /* eslint no-eval: 0 */
         if (obj.value === '=') {
             let nums = inputRef.current.value.replace(/×/g, '*').replace(/÷/g, '/');
             nums = nums.replace(/[^-()\d/*+.]/g, '');
-            console.log(nums);
-            inputRef.current.value = eval(nums);
+            inputRef.current.value = global.eval(nums);
         } else inputRef.current.value += obj.value;
     }
+
     const clearValue = () => {
         inputRef.current.value = '';
     }
