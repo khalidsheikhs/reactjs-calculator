@@ -1,14 +1,10 @@
-.container {
-    width: 580px;
-    margin: 30px auto;
-    border: 1px solid #ccc;
-}
 .keypad {
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
 
 .key {
+    text-align: center;
     padding: 3px;
     background-color: #eee;
     border: 1px solid #ccc;
