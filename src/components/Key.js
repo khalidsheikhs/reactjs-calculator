@@ -1,10 +1,7 @@
-function Key(props) {
-    const selectKey = () => {
-        props.onSelectKey({ value: props.keyVal, isControlTab: props.isControlTab });
-    }
+function Key({ selectKey, ...props }) {
     return (
         <div className="key">
-            <span onClick={selectKey}>{props.keyVal}</span>
+            <span onClick={ () => { selectKey(props) } }>{ props.keyVal }</span>
         </div>
     );
 }

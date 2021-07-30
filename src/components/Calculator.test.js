@@ -1,25 +1,18 @@
-/*
-import { render, screen } from '@testing-library/react';
-import Calculator from "./Calculator";
-
-test('renders calculator', () => {
-  render(<Calculator />);
-  const linkElement = screen.getByText(/7/i);
-  expect(linkElement).toBeInTheDocument();
-});
-
-*/
 import React from "react";
 import Calculator from "./Calculator";
-import Enzyme, { shallow } from "@wojtekmaj/enzyme-adapter-react-17";
+import Key from "./Key";
+import Enzyme, { shallow } from "enzyme";
+import ReactSeventeenAdapter from "@wojtekmaj/enzyme-adapter-react-17";
+
+Enzyme.configure({ adapter: new ReactSeventeenAdapter() });
 
 describe('Calculator', () => {
-  it('should be true', () => {
-    const foo = true;
-    expect(foo).toBe(true);
-  });
-  it('should be false', () => {
-    const foo = true;
-    expect(foo).toBe(false);
+  test('should show text in input', () => {
+    const key = shallow(<Key />);
+    const button = key.find('span');
+    button.simulate('click');
+    const screen = shallow(<Calculator />);
+    const text = screen.find('input');
+    expect(text.length).toBe('1');
   });
 });
