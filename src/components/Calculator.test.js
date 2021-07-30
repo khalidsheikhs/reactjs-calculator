@@ -7,7 +7,7 @@ import ReactSeventeenAdapter from "@wojtekmaj/enzyme-adapter-react-17";
 Enzyme.configure({ adapter: new ReactSeventeenAdapter() });
 
 describe('Calculator', () => {
-  test('should show text in input', () => {
+  it('should show text in input', () => {
     const key = shallow(<Key />);
     const button = key.find('span');
     button.simulate('click');
